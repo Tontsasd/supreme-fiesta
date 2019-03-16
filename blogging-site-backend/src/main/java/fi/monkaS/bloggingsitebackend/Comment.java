@@ -2,13 +2,10 @@ package fi.monkaS.bloggingsitebackend;
 
 import java.time.LocalDate;
 
-public class Blogpost {
-
+public class Comment {
     Long id;
     String author;
-    Comment[] comments;
     String content;
     LocalDate date;
-    String[] tags;
-    String title;
+    Long parentId;
 }
