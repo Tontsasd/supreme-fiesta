@@ -13,12 +13,9 @@ public class Blogpost {
     private String content;
     private Date date;
     private String[] tags;
+    private String title;
 
     public Blogpost() {
-
-    }
-
-    public Blogpost(ResultSet resultSet) {
 
     }
 
@@ -39,8 +36,6 @@ public class Blogpost {
         this.date = date;
         this.title = title;
     }
-
-    private String title;
 
     public Long getId() {
         return id;

@@ -14,12 +14,19 @@ public class BlogpostRepositoryImpl implements BlogpostRepository {
 
     @Override
     public Blogpost saveEntity(Blogpost entity) {
-        return null;
+        jdbcTemplate.update("insert into blogpost values (?, ?, ?, ?, ?)", new Object[] {entity.getId(), entity.getAuthor(), entity.getContent(), entity.getDate(), entity.getTitle()});
+        return entity;
+    }
+
+    @Override
+    public Blogpost update(Blogpost entity) {
+        jdbcTemplate.update("update blogpost set author = ?, content = ?, date = ?, title = ? where id =" + entity.getId(), new Object[] {entity.getAuthor(), entity.getContent(), entity.getDate(), entity.getTitle()});
+        return entity;
     }
 
     @Override
     public void deleteById(Long postId) {
-
+        jdbcTemplate.update("delete from blogpost where id=" + postId);
     }
 
     @Override
