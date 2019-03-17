@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.util.Optional;
+
 @RestController
 public class MyRestController {
 
@@ -43,6 +45,11 @@ public class MyRestController {
 
     @RequestMapping(value = "/posts/{postId}", method = RequestMethod.GET)
     public Blogpost getPost(@PathVariable Long postId) {
+        Optional<Blogpost> b = Optional.ofNullable(blogpostRepository.findById(postId));
+
+        if (!b.isPresent())
+            throw new BlogpostNotFoundException("id: " + postId);
+
         return blogpostRepository.findById(postId);
     }
 
