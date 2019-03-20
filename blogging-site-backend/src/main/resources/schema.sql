@@ -1,18 +1,16 @@
 create table blogpost
 (
-  id integer not null,
+  id integer IDENTITY(1,1) PRIMARY KEY,
   author varchar(255) not null,
   content varchar(255) not null,
   date DATE not null,
   title varchar(255) not null,
-  primary key(id)
 );
 
 create table tag
 (
-  id integer not null,
+  id integer IDENTITY(1,1) PRIMARY KEY ,
   tagname varchar(255) not null,
-  primary key (id)
 );
 
 create table post_tags
@@ -23,10 +21,9 @@ create table post_tags
 
 create table comment
 (
-  id integer not null,
+  id integer IDENTITY(1,1) PRIMARY KEY ,
   author varchar(255) not null,
   content varchar(255) not null,
   date DATE not null,
   parentid integer not null,
-  primary key (id)
 );
