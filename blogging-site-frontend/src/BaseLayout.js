@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
+import './BaseLayout.css';
+import LoginControl from './LoginControl';
+import Navbar from './Navbar';
 
-class BaseLayout extends React.Component {
+class BaseLayout extends Component {
+
   render() {
     return (
-      <div>
-        Testi
+      <div class="background">
+        <div class="container">
+          <Navbar/>
+          <LoginControl/>
+          <div class="content">
+          </div>
+        </div>
       </div>
     )
   }
 }
 
-export default BaseLayout;
+export default BaseLayout
