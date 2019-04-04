@@ -12,7 +12,7 @@ class BaseLayout extends Component {
         <div class="container">
           <Navbar/>
           <LoginControl/>
-          <Content src="http://localhost:8080"/>
+          <Content src="http://localhost:8080/posts/"/>
         </div>
       </div>
     )
