@@ -27,7 +27,7 @@ public class MyRestController {
         return new ResponseEntity<>(headers, HttpStatus.CREATED);
     }
 
-    @RequestMapping(value = "/posts/{postId}/update", method = RequestMethod.POST)
+    /*@RequestMapping(value = "/posts/{postId}/update", method = RequestMethod.POST)
     public ResponseEntity<Void> updatePost(@RequestBody Blogpost p, UriComponentsBuilder b, @PathVariable Long postId) {
         blogpostRepository.update(p);
 
@@ -47,7 +47,7 @@ public class MyRestController {
         headers.setLocation(uriComponents.toUri());
 
         return new ResponseEntity<>(headers, HttpStatus.CREATED);
-    }
+    }*/
 
     @RequestMapping(value = "/posts", method = RequestMethod.GET)
     public Iterable<Blogpost> getAllPosts() {
