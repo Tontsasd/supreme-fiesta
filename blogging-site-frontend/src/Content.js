@@ -21,7 +21,7 @@ class Content extends Component {
         rows.push(postData)
       }
       
-      let stateObj = {'locationData': rows}
+      let stateObj = {'postData': rows}
       this.setState(stateObj)
     })
   }
