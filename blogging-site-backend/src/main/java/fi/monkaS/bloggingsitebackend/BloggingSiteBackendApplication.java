@@ -30,7 +30,7 @@ public class BloggingSiteBackendApplication {
             logger.info("DELETE one blogpost");
             logger.info("    curl -X DELETE " + SERVER + RESOURCE + "1");
             logger.info("POST one blogpost");
-            logger.info("    curl -X POST -H \"Content-type: application/json\" -d \"{\\\"author\\\":\\\"Jaska\\\",\\\"content\\\":\\\"Nintendo is decent\\\",\\\"date\\\":\\\"2019-01-01\\\",\\\"title\\\":\\\"Nintendo\\\"}\" " + SERVER + RESOURCE);
+            logger.info("    curl -X POST -H \"Content-type: application/json\" -d \"{\\\"author\\\":\\\"Jaska\\\",\\\"content\\\":\\\"Nintendo is decent\\\",\\\"date\\\":\\\"2019-01-01\\\",\\\"title\\\":\\\"Nintendo\\\"}\" " + SERVER);
         };
     }
 
