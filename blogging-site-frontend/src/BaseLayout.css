@@ -2,7 +2,6 @@
     margin-left: 20%;
     margin-right: 20%;
     margin-top: 1rem;
-    box-shadow: 0 0 5px #ccc;
 }
 
 .mynav {
@@ -65,9 +64,10 @@
 }
 
 .content {
-    height: 100rem;
+    height: min-content;
     background-color: white;
     margin-bottom: 1rem;
+    box-shadow: 0 0 5px #ccc;
 }
 
 .background {

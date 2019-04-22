@@ -28,20 +28,17 @@ class Content extends Component {
 
   render() {
     return (
-      <div class="content">
-        <table>
-          <tbody>
+      <div class="my-container">
             {this.state.postData.map(e => (
-              <tr key={e.id}>
-                <th>{e.id}</th>
-                <th>{e.title}</th>
-                <th>{e.content}</th>
-                <th>{e.author}</th>
-                <th>{e.date}</th>
-              </tr>
+              <div class="content" key={e.id}>
+                <h1>{e.title}</h1>
+
+                <p>{e.content}</p>
+
+                <p>{e.author} - {e.date}</p>
+                <th></th>
+              </div>
             ))}
-          </tbody>
-        </table>
       </div>
     )
   }
