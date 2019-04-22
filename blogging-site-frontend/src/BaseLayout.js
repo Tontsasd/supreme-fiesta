@@ -9,9 +9,9 @@ class BaseLayout extends Component {
   render() {
     return (
       <div class="background">
-        <div class="container">
-          <Navbar/>
-          <LoginControl/>
+        <Navbar/>
+        <LoginControl/>
+        <div class="my-container">
           <Content src="http://localhost:8080/posts/"/>
         </div>
       </div>

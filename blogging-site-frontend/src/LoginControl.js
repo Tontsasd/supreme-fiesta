@@ -24,18 +24,18 @@ class LoginControl extends Component {
     let comp = null
       if (!isLoggedIn) {
         comp = 
-          <div class="usernav">
+          <div class="usernav-container">
             <span class="myLink" onClick={this.handleLoginClick.bind(this)}>Login</span> / <span class="myLink" onClick={this.handleRegisterClick.bind(this)}>Register</span>
           </div>
       } else {
         comp = 
-          <div class="usernav">
-            Signed in as: <span onClick={this.handleLogoutClick.bind(this)} class="myLink">{this.state.username}</span>
+          <div class="usernav-container">
+            <span onClick={this.handleLogoutClick.bind(this)} class="myLink">{this.state.username}</span>
           </div>
       }
 
     return (
-      <div>
+      <div class="usernav">
         {comp}
       </div>
     )

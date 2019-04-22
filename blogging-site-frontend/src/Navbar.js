@@ -10,8 +10,10 @@ class Navbar extends Component {
   render() {
     return (
         <div class="mynav">
-          <input class="myInput" type="text" placeholder="Search"/>
-          <button onClick={this.onClickButton.bind(this)} class="myButton">Search</button>
+          <div class="mynav-container">
+            <input class="myInput" type="text" placeholder="Search"/>
+            <button onClick={this.onClickButton.bind(this)} class="myButton">Search</button>
+          </div>
         </div>
     )
   }

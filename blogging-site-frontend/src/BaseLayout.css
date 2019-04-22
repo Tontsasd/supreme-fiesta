@@ -1,23 +1,43 @@
-.container {
-    width: 80%;
+.my-container {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 1rem;
+    box-shadow: 0 0 5px #ccc;
 }
 
 .mynav {
     width: 100%;
     background-color: #353942;
     height: 3rem;
+    top: 0;
+}
+
+.mynav-container {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    height: 3rem;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 .usernav {
     border-radius: 0px 0px 10px 10px;
     height: 2rem;
+    width: 100%;
+    top: 3rem;
+}
+
+.usernav-container {
+    float: right;
+    display: flex;
+    justify-content: center;
+    height: 2rem;
+    width: 10rem;
     background-color:#007AFF;
     color: white;
-    width: 25%;
-    float: right;
+    border-radius: 0px 0px 10px 10px;
+    margin-right: 20%;
 }
 
 .myLink:hover {
@@ -47,8 +67,11 @@
 .content {
     height: 100rem;
     background-color: white;
+    margin-bottom: 1rem;
 }
 
 .background {
-    background:url("./images/body.png");
+    /*background:url("./images/body.png");*/
+    background-color: #F2F2F2;
+    height: 100%;
 }
