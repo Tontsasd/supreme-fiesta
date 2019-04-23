@@ -12,7 +12,7 @@ public class BlogpostRowMapper implements RowMapper<Blogpost> {
         blogpost.setId(resultSet.getLong("id"));
         blogpost.setAuthor(resultSet.getString("author"));
         blogpost.setContent(resultSet.getString("content"));
-        blogpost.setDate(resultSet.getDate("date"));
+        blogpost.setDate(resultSet.getString("date_time"));
         blogpost.setTitle(resultSet.getString("title"));
 
         return blogpost;

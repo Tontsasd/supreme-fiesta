@@ -10,7 +10,6 @@ class BaseLayout extends Component {
     return (
       <div class="background">
         <Navbar/>
-        <LoginControl/>
         <Content src="http://localhost:8080/posts/"/>
       </div>
     )

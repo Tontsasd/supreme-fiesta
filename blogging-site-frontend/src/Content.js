@@ -17,7 +17,12 @@ class Content extends Component {
       var rows = []
       
       for (let index = 0; index < response.length; index++) {
-        var postData = {id: response[index].id, author: response[index].author, content: response[index].content, date:  response[index].date, title: response[index].title}
+        const myDate = response[index].date
+
+        var d = myDate.split(/[- :]/)
+        var theDate = d[2] + '.' + d[1] + '.' + d[0] + ' ' + d[3] + ':' + d[4]
+
+        var postData = {id: response[index].id, author: response[index].author, content: response[index].content, date: theDate, title: response[index].title}
         rows.push(postData)
       }
       
@@ -36,7 +41,6 @@ class Content extends Component {
                 <p>{e.content}</p>
 
                 <p>{e.author} - {e.date}</p>
-                <th></th>
               </div>
             ))}
       </div>
