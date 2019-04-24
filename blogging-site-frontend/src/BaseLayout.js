@@ -4,6 +4,7 @@ import LoginControl from './LoginControl';
 import Navbar from './Navbar';
 import Content from './Content';
 
+
 class BaseLayout extends Component {
 
   render() {
@@ -11,6 +12,7 @@ class BaseLayout extends Component {
       <div class="background">
         <Navbar/>
         <Content src="http://localhost:8080/posts/"/>
+        
       </div>
     )
   }

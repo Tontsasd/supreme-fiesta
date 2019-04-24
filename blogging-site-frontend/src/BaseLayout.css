@@ -63,21 +63,33 @@
     background-color: #0069D9;
 }
 
-.content {
+.my-content {
     height: min-content;
     background-color: white;
     margin-bottom: 1rem;
     box-shadow: 0 0 5px #ccc;
     white-space: pre-line;
+    text-align: left;
 }
 
-.content p {
-    padding: 1rem 2rem 1rem 2rem;
+.content-content {
+    padding: 0rem 2rem 1rem 2rem;
 }
 
-.content h1 {
+.author-content {
+    padding: 0rem 2rem 1rem 2rem;
+    text-align: right;
+}
+
+.date-content {
+    text-align: right;
+    padding-right: 2rem;
+}
+
+.my-content h1 {
     padding-top: 2rem;
-    padding-bottom: 1rem;
+    padding-bottom: 0rem;
+    text-align: center;
 }
 
 .background {
