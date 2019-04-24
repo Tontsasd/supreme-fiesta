@@ -17,14 +17,14 @@ public class MyRestController {
     BlogpostRepository blogpostRepository;
 
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<Void> addPost(@RequestBody Blogpost p, UriComponentsBuilder b) {
+    public ResponseEntity<Blogpost> addPost(@RequestBody Blogpost p, UriComponentsBuilder b) {
         blogpostRepository.saveEntity(p);
 
         UriComponents uriComponents = b.path("/posts/{id}").buildAndExpand(p.getId());
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(uriComponents.toUri());
 
-        return new ResponseEntity<>(headers, HttpStatus.CREATED);
+        return new ResponseEntity<>(p, headers, HttpStatus.CREATED);
     }
 
     /*@RequestMapping
