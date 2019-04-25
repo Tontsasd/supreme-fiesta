@@ -1,17 +1,17 @@
 package fi.monkaS.bloggingsitebackend;
 
-import java.sql.ResultSet;
-import java.time.LocalDate;
 import java.util.Arrays;
-import java.util.Date;
 
+/**
+ * Represents a blogpost from database.
+ */
 public class Blogpost {
 
     private Long id;
     private String author;
     private Comment[] comments;
     private String content;
-    private Date date;
+    private String date;
     private String[] tags;
     private String title;
 
@@ -19,7 +19,7 @@ public class Blogpost {
 
     }
 
-    public Blogpost(Long id, String author, Comment[] comments, String content, Date date, String[] tags, String title) {
+    public Blogpost(Long id, String author, Comment[] comments, String content, String date, String[] tags, String title) {
         this.id = id;
         this.author = author;
         this.comments = comments;
@@ -29,7 +29,7 @@ public class Blogpost {
         this.title = title;
     }
 
-    public Blogpost(Long id, String author, String content, Date date, String title) {
+    public Blogpost(Long id, String author, String content, String date, String title) {
         this.id = id;
         this.author = author;
         this.content = content;
@@ -61,11 +61,11 @@ public class Blogpost {
         this.content = content;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

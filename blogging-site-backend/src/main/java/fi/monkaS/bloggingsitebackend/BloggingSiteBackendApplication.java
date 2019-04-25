@@ -7,6 +7,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+/**
+ * The main application.
+ */
 @SpringBootApplication
 public class BloggingSiteBackendApplication {
 
@@ -17,6 +20,10 @@ public class BloggingSiteBackendApplication {
         SpringApplication.run(BloggingSiteBackendApplication.class, args);
     }
 
+    /**
+     * Prints curl commands on server start.
+     * @return returns curl commands.
+     */
     @Bean
     public CommandLineRunner instructions() {
         return (String... args) -> {

@@ -5,6 +5,9 @@ import org.springframework.jdbc.core.RowMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * Implementation of RowMapper to not repeat code when returning comments.
+ */
 public class CommentRowMapper implements RowMapper<Comment> {
     @Override
     public Comment mapRow(ResultSet resultSet, int i) throws SQLException {

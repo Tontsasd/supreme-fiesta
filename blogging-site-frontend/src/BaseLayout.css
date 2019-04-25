@@ -1,23 +1,42 @@
-.container {
-    width: 80%;
+.my-container {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 1rem;
 }
 
 .mynav {
     width: 100%;
     background-color: #353942;
     height: 3rem;
+    top: 0;
+}
+
+.mynav-container {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    height: 3rem;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 .usernav {
     border-radius: 0px 0px 10px 10px;
     height: 2rem;
+    width: 100%;
+    top: 3rem;
+}
+
+.usernav-container {
+    float: right;
+    display: flex;
+    justify-content: center;
+    height: 2rem;
+    width: 10rem;
     background-color:#007AFF;
     color: white;
-    width: 25%;
-    float: right;
+    border-radius: 0px 0px 10px 10px;
+    margin-right: 20%;
 }
 
 .myLink:hover {
@@ -44,11 +63,69 @@
     background-color: #0069D9;
 }
 
-.content {
-    height: 100rem;
+.my-content {
+    height: min-content;
     background-color: white;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 5px #ccc;
+    white-space: pre-line;
+    text-align: left;
+}
+
+.content-content {
+    padding: 0rem 2rem 1rem 2rem;
+}
+
+.author-content {
+    padding: 0rem 2rem 1rem 2rem;
+    text-align: right;
+}
+
+.date-content {
+    text-align: right;
+    padding-right: 2rem;
+}
+
+.my-content h1 {
+    padding-top: 2rem;
+    padding-bottom: 0rem;
+    text-align: center;
+}
+
+.my-message {
+    height: min-content;
+    background-color: white;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 5px #ccc;
+    white-space: pre-line;
+    align-content: center;
+    margin-bottom: 1rem;
+}
+
+.my-message #title {
+    height: 2rem;
+    width: 80%;
+    margin-top: 1rem;
+}
+
+.my-message #message {
+    width: 80%;
+    height: 30rem;
+}
+
+.my-message button {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+textarea {
+    resize: none;
+    border-radius: 5px;
+    margin-right: 0.5rem;
+    text-indent: 0.5rem;
 }
 
 .background {
-    background:url("./images/body.png");
+    background-color: #F2F2F2;
+    height: 100%;
 }
