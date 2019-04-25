@@ -15,11 +15,17 @@ class Message extends Component {
   }
 
   handleSubmit() {
-    let date = this.createCurrentDate()
-    this.props.onClick(this.state.author, this.state.content, date, this.state.title)
-    this.setState(this.baseState)
+    if (this.state.content !== '' && this.state.title !== '') {
+      let date = this.createCurrentDate()
+      this.props.onClick(this.state.author, this.state.content, date, this.state.title)
+      this.setState(this.baseState)
+    } else if (this.state.content === '') {
+      alert('Your message field is empty, please provide a message before submitting.')
+    } else if (this.state.title === '') {
+      alert('Title must contain at least 1 character.')
+    }
   }
-
+    
   createCurrentDate() {
     var date = new Date().getDate()
     var month = new Date().getMonth() + 1
@@ -50,10 +56,12 @@ class Message extends Component {
 
   render() {
     return (
-      <div class="">
-        <textarea id='title' value={this.state.value} onChange={this.handleChange.bind(this)}/>
-        <textarea id='message' value={this.state.value} onChange={this.handleChange.bind(this)}/>
-        <button onClick={this.handleSubmit.bind(this)}>Post</button>
+      <div class="my-message">
+        <textarea id='title' value={this.state.title} onChange={this.handleChange.bind(this)} placeholder="Title"/>
+        <br/>
+        <textarea id='message' value={this.state.content} onChange={this.handleChange.bind(this)} placeholder="Message"/>
+        <br/>
+        <button class="myButton" onClick={this.handleSubmit.bind(this)}>Publish</button>
       </div>
     )
   }

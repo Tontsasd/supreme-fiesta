@@ -92,6 +92,39 @@
     text-align: center;
 }
 
+.my-message {
+    height: min-content;
+    background-color: white;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 5px #ccc;
+    white-space: pre-line;
+    align-content: center;
+    margin-bottom: 1rem;
+}
+
+.my-message #title {
+    height: 2rem;
+    width: 80%;
+    margin-top: 1rem;
+}
+
+.my-message #message {
+    width: 80%;
+    height: 30rem;
+}
+
+.my-message button {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+textarea {
+    resize: none;
+    border-radius: 5px;
+    margin-right: 0.5rem;
+    text-indent: 0.5rem;
+}
+
 .background {
     background-color: #F2F2F2;
     height: 100%;
