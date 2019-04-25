@@ -15,3 +15,10 @@ create table comment
   date varchar(255) not null,
   parentid integer not null,
 );
+
+create table user
+(
+  id integer IDENTITY(1,1) PRIMARY KEY ,
+  username varchar(255) not null,
+  password varchar(255) not null,
+);
