@@ -5,6 +5,9 @@ import org.springframework.jdbc.core.RowMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * Implementation of RowMapper to not repeat code when returning posts.
+ */
 public class BlogpostRowMapper implements RowMapper<Blogpost> {
     @Override
     public Blogpost mapRow(ResultSet resultSet, int i) throws SQLException {

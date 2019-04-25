@@ -2,6 +2,9 @@ package fi.monkaS.bloggingsitebackend;
 
 import java.util.Arrays;
 
+/**
+ * Represents a blogpost from database.
+ */
 public class Blogpost {
 
     private Long id;

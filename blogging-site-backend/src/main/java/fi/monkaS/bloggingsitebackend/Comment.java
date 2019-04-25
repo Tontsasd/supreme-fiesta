@@ -2,6 +2,9 @@ package fi.monkaS.bloggingsitebackend;
 
 import java.util.Date;
 
+/**
+ * Represents a comment in a blogpost.
+ */
 public class Comment {
     Long id;
     String author;
