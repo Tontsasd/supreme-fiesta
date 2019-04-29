@@ -50,8 +50,19 @@ public class MyRestController {
         UriComponents uriComponents = b.path("/posts/{id}").buildAndExpand(p.getId());
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(uriComponents.toUri());
-
+  
         return new ResponseEntity<>(p, headers, HttpStatus.OK);
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
+    public ResponseEntity<Void> register(@RequestBody User u, UriComponentsBuilder b) {
+        //save user
+
+        UriComponents uriComponents = b.path("/users/{username}").buildAndExpand(u.getUsername());
+        HttpHeaders headers = new HttpHeaders();
+        headers.setLocation(uriComponents.toUri());
+
+        return new ResponseEntity<>(headers, HttpStatus.CREATED);
     }
 
     /**
