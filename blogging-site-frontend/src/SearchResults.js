@@ -2,19 +2,15 @@ import React, { Component, Fragment } from 'react';
 import { withRouter } from "react-router-dom";
 import ShowMore from 'react-show-more';
 
-class Content extends Component {
+class SearchResults extends Component {
   constructor(props) {
     super(props)
     let postData = {id: '', author: '', content: '', date: '', title: ''}
-    if (props.match.params.page)
-      this.state = {'postData': [postData], currentPage: props.match.params.page, postsPerPage: 5}
-    else
-    this.state = {'postData': [postData], currentPage: 1, postsPerPage: 5}
-    this.handleClick = this.handleClick.bind(this)
+    this.state = {'postData': [postData], currentPage: 1, postsPerPage: 5, keyword: this.props.location.state.keyword, update: this.props.location.state.update}
   }
 
   componentDidMount() {
-    this.fetchAllPosts()
+    this.fetchPosts()
   }
 
   handleClick(event) {
@@ -23,8 +19,13 @@ class Content extends Component {
     })
   }
 
-  fetchAllPosts() {
-    let url = this.props.src
+  componentDidUpdate(a) {
+    if (a.location.state.update)
+      this.setState({keyword: a.location.state.keyword})
+  }
+
+  fetchPosts() {
+    let url = this.props.src + this.state.keyword
     fetch(url).then((resp) => resp.json()).catch(error => console.error('Error:', error)).then(response => {
       var rows = []
       
@@ -42,28 +43,6 @@ class Content extends Component {
       let stateObj = {'postData': sorted}
       this.setState(stateObj)
     })
-  }
-
-  fetchDeletePost(event) {
-    fetch(this.props.src + event.target.id, {
-      method: 'DELETE'
-    }).then(resp => {
-          this.fetchAllPosts()
-    })
-  }
-
-  onEditClick(event) {
-    var c = ''
-    var t = ''
-
-    this.state.postData.forEach(element => {
-      if (element.id == event.target.id) {
-        c = element.content
-        t = element.title
-      }
-    })
-
-    this.props.history.push({pathname: '/editpost', state: {id: event.target.id, content: c, title: t, currentPage: this.state.currentPage}})
   }
 
   render() {
@@ -92,8 +71,7 @@ class Content extends Component {
       <p class="author-content">{post.author}</p>
       
       <div class="content-buttons">
-        <button id={post.id} class="myButton" onClick={this.onEditClick.bind(this)}>Edit</button>
-        <button id={post.id} class="myDeleteButton" onClick={this.fetchDeletePost.bind(this)}>Delete</button>
+
       </div>
     </div>)
     })
@@ -127,4 +105,4 @@ class Content extends Component {
   }
 }
 
-export default withRouter(Content)
+export default withRouter(SearchResults)

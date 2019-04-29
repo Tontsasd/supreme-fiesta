@@ -71,4 +71,9 @@ public class BlogpostRepositoryImpl implements BlogpostRepository {
         else
             return null;
     }
+
+    @Override
+    public Iterable<Blogpost> search(String keyword) {
+        return jdbcTemplate.query("select * from blogpost where content like \'" + "%" + keyword + "%" + "\'", new BlogpostRowMapper());
+    }
 }

@@ -4,9 +4,8 @@ import { withRouter } from "react-router-dom";
 class EditPost extends Component {
   constructor(props) {
     super(props)
-    this.baseState = this.state
-    this.state = {content: this.props.location.state.content, title: this.props.location.state.title, id: this.props.location.state.id}
     //this.baseState = this.state
+    this.state = {content: this.props.location.state.content, title: this.props.location.state.title, id: this.props.location.state.id, currentPage: this.props.location.state.currentPage}
   }
 
   handleChange(event) {
@@ -36,7 +35,7 @@ class EditPost extends Component {
         'Content-Type': 'application/json'
       })
     }).then((resp) => resp.json()).catch(error => console.error('Error:', error)).then(response => {
-      this.props.history.push('/')
+      this.props.history.push('/' + this.state.currentPage)
     })
   }
     
