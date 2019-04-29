@@ -25,7 +25,7 @@ public class MyRestController {
      * @param b Uricomponentsbuilder
      * @return Returns httpstatus CREATED and the blogpost
      */
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/posts", method = RequestMethod.POST)
     public ResponseEntity<Blogpost> addPost(@RequestBody Blogpost p, UriComponentsBuilder b) {
         blogpostRepository.saveEntity(p);
 
@@ -87,5 +87,10 @@ public class MyRestController {
     public ResponseEntity<Void> deletePost(@PathVariable Long postId) {
         blogpostRepository.deleteById(postId);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @RequestMapping(value = "/posts/search/{keyword}", method = RequestMethod.GET)
+    public Iterable<Blogpost> searchPosts(@PathVariable String keyword) {
+        return blogpostRepository.search(keyword);
     }
 }
